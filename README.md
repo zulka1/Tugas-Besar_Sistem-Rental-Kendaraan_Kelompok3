@@ -16,7 +16,7 @@
 
 
 
-#### **Sistem Rental Kendaraan**
+## **Sistem Rental Kendaraan**
 
 Mahasiswa diminta untuk membuat aplikasi berbasis Java Console untuk mengelola operasi peminjaman kendaraan di sebuah perusahaan rental. Aplikasi ini harus dapat melacak data kendaraan yang tersedia, data pelanggan, dan transaksi peminjaman serta pengembalian.
 
@@ -24,9 +24,5 @@ Mahasiswa diminta untuk membuat aplikasi berbasis Java Console untuk mengelola o
 
 **Use Case Tambahan: Modul Layanan Sopir (Driver Service)**
 
-Pelanggan bisa memilih untuk menyewa mobil "Lepas Kunci" (tanpa sopir) atau "Dengan Sopir".
-
-Transaksi peminjaman tidak hanya mengikat objek Kendaraan, tapi secara opsional bisa mengikat objek Sopir. Biaya
-
-harian sopir harus ditambahkan ke perhitungan total.
+Pelanggan bisa memilih untuk menyewa mobil "Lepas Kunci" (tanpa sopir) atau "Dengan Sopir". Transaksi peminjaman tidak hanya mengikat objek Kendaraan, tapi secara opsional bisa mengikat objek Sopir. Biaya harian sopir harus ditambahkan ke perhitungan total.
 
