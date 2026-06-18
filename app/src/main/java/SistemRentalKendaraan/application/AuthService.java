@@ -1,5 +1,6 @@
 package SistemRentalKendaraan.application;
 
+<<<<<<< HEAD
 import SistemRentalKendaraan.domain.model.User;
 import SistemRentalKendaraan.domain.repository.UserRepository;
 
@@ -18,3 +19,7 @@ public class AuthService {
         return null; // Login gagal
     }
 }
+=======
+public class AuthService {
+}
+>>>>>>> origin/main

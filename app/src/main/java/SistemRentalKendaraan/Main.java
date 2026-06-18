@@ -1,5 +1,6 @@
 package SistemRentalKendaraan;
 
+<<<<<<< HEAD
 import SistemRentalKendaraan.application.AuthService;
 import SistemRentalKendaraan.domain.repository.UserRepository;
 import SistemRentalKendaraan.infrastructure.JsonUserRepository;
@@ -15,3 +16,10 @@ public class Main {
         loginView.start();
     }
 }
+=======
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Sistem Rental Kendaraan - Kelompok 3");
+    }
+}
+>>>>>>> origin/main

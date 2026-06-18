@@ -1,5 +1,6 @@
 package SistemRentalKendaraan.presentation;
 
+<<<<<<< HEAD
 import java.util.Scanner;
 
 public class ConsoleHelper {
@@ -16,3 +17,7 @@ public class ConsoleHelper {
         System.out.println("=================================");
     }
 }
+=======
+public class ConsoleHelper {
+}
+>>>>>>> origin/main

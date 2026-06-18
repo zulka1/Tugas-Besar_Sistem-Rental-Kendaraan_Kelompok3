@@ -1,6 +1,7 @@
 package SistemRentalKendaraan.presentation;
 
 public class StaffDashboard {
+<<<<<<< HEAD
     public void showMenu() {
         ConsoleHelper.printHeader("DASHBOARD STAFF");
         System.out.println("1. Transaksi Peminjaman");
@@ -10,3 +11,6 @@ public class StaffDashboard {
         ConsoleHelper.getInput("Pilih menu: ");
     }
 }
+=======
+}
+>>>>>>> origin/main

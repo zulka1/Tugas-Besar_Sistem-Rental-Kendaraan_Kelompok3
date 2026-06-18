@@ -1,6 +1,7 @@
 package SistemRentalKendaraan.presentation;
 
 public class AdminDashboard {
+<<<<<<< HEAD
     public void showMenu() {
         ConsoleHelper.printHeader("DASHBOARD ADMIN");
         System.out.println("1. Kelola Sopir");
@@ -10,3 +11,6 @@ public class AdminDashboard {
         ConsoleHelper.getInput("Pilih menu: ");
     }
 }
+=======
+}
+>>>>>>> origin/main

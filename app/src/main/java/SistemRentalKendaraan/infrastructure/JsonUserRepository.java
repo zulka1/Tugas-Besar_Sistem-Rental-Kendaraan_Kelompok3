@@ -1,5 +1,6 @@
 package SistemRentalKendaraan.infrastructure;
 
+<<<<<<< HEAD
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import SistemRentalKendaraan.domain.model.User;
@@ -41,3 +42,9 @@ public class JsonUserRepository implements UserRepository {
         return null;
     }
 }
+=======
+import SistemRentalKendaraan.domain.repository.UserRepository;
+
+public class JsonUserRepository implements UserRepository {
+}
+>>>>>>> origin/main

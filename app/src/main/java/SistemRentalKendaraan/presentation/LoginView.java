@@ -1,5 +1,6 @@
 package SistemRentalKendaraan.presentation;
 
+<<<<<<< HEAD
 import SistemRentalKendaraan.application.AuthService;
 import SistemRentalKendaraan.domain.model.User;
 
@@ -53,3 +54,7 @@ public class LoginView {
         }
     }
 }
+=======
+public class LoginView {
+}
+>>>>>>> origin/main

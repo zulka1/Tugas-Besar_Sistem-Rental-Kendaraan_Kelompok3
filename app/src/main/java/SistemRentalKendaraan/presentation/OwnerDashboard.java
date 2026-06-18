@@ -1,6 +1,7 @@
 package SistemRentalKendaraan.presentation;
 
 public class OwnerDashboard {
+<<<<<<< HEAD
     public void showMenu() {
         ConsoleHelper.printHeader("DASHBOARD OWNER");
         System.out.println("1. Laporan Pendapatan");
@@ -9,3 +10,6 @@ public class OwnerDashboard {
         ConsoleHelper.getInput("Pilih menu: ");
     }
 }
+=======
+}
+>>>>>>> origin/main

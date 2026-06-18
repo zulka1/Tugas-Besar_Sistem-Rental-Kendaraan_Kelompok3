@@ -1,5 +1,6 @@
 package SistemRentalKendaraan.domain.model;
 
+<<<<<<< HEAD
 import SistemRentalKendaraan.domain.model.enums.Role;
 
 public class User {
@@ -17,3 +18,7 @@ public class User {
     public String getPassword() { return password; }
     public Role getRole() { return role; }
 }
+=======
+public class User {
+}
+>>>>>>> origin/main
