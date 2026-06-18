@@ -1,4 +1,4 @@
-package rental.domain.model;
+package SistemRentalKendaraan.domain.model;
 
 public class Sopir {
 }

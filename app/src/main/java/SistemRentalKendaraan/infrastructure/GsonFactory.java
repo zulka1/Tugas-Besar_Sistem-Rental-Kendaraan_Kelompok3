@@ -1,4 +1,4 @@
-package rental.infrastructure;
+package SistemRentalKendaraan.infrastructure;
 
 public class GsonFactory {
 }

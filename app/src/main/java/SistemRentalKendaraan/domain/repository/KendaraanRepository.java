@@ -1,4 +1,4 @@
-package rental.domain.repository;
+package SistemRentalKendaraan.domain.repository;
 
 public interface KendaraanRepository {
 }

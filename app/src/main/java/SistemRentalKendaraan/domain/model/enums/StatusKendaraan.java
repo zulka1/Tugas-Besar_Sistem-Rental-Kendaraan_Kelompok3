@@ -1,4 +1,4 @@
-package rental.domain.model.enums;
+package SistemRentalKendaraan.domain.model.enums;
 
 public enum StatusKendaraan {
     TERSEDIA,

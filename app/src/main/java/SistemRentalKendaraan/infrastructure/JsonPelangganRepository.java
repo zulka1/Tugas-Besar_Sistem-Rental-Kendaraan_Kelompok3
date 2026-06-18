@@ -1,6 +1,6 @@
-package rental.infrastructure;
+package SistemRentalKendaraan.infrastructure;
 
-import rental.domain.repository.PelangganRepository;
+import SistemRentalKendaraan.domain.repository.PelangganRepository;
 
 public class JsonPelangganRepository implements PelangganRepository {
 }

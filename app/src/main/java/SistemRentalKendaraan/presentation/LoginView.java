@@ -1,4 +1,4 @@
-package rental.presentation;
+package SistemRentalKendaraan.presentation;
 
 public class LoginView {
 }

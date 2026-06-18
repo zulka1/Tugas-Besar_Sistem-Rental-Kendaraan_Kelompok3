@@ -1,6 +1,6 @@
-package rental.infrastructure;
+package SistemRentalKendaraan.infrastructure;
 
-import rental.domain.repository.SopirRepository;
+import SistemRentalKendaraan.domain.repository.SopirRepository;
 
 public class JsonSopirRepository implements SopirRepository {
 }

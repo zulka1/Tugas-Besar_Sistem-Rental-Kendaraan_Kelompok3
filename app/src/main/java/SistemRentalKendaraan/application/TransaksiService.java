@@ -1,4 +1,4 @@
-package rental.application;
+package SistemRentalKendaraan.application;
 
 public class TransaksiService {
 }

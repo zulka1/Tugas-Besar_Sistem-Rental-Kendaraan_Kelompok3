@@ -1,6 +1,6 @@
-package rental.infrastructure;
+package SistemRentalKendaraan.infrastructure;
 
-import rental.domain.repository.UserRepository;
+import SistemRentalKendaraan.domain.repository.UserRepository;
 
 public class JsonUserRepository implements UserRepository {
 }

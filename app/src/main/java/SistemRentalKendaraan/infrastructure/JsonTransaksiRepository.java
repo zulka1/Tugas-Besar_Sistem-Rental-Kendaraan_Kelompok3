@@ -1,6 +1,6 @@
-package rental.infrastructure;
+package SistemRentalKendaraan.infrastructure;
 
-import rental.domain.repository.TransaksiRepository;
+import SistemRentalKendaraan.domain.repository.TransaksiRepository;
 
 public class JsonTransaksiRepository implements TransaksiRepository {
 }
