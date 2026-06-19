@@ -1,4 +1,4 @@
-package com.SistemRentalKendaraan.presentation;
+package SistemRentalKendaraan.presentation;
 
 import com.SistemRentalKendaraan.application.KendaraanService;
 import com.SistemRentalKendaraan.domain.model.Kendaraan;
@@ -17,16 +17,21 @@ public class AdminDashboard {
     }
     
     public void showMenu() {
-        System.out.println("DASHBOARD ADMIN");
+        ConsoleHelper.printHeader("DASHBOARD ADMIN");
         System.out.println("1. Kelola Sopir");
         System.out.println("2. Kelola Mobil");
         System.out.println("3. Kelola Motor");
         System.out.println("0. Logout");
+        ConsoleHelper.getInput("Pilih menu: ");
     }
+}
 
-    public void menuTambahKendaraan() {
+public void menuTambahKendaraan() {
         System.out.print("Pilih Jenis Kendaraan (1. Mobil, 2. Motor, 0. Kembali) > ");
         int pilihan = scanner.nextInt();
+        scanner.nextLine();
+
+int pilihan = scanner.nextInt();
         scanner.nextLine(); 
 
         if (pilihan == 0) return;
@@ -53,7 +58,6 @@ public class AdminDashboard {
         } catch (Exception e) {
             System.out.println("[GAGAL] " + e.getMessage());
         }
-    }
 
     public void menuLihatKendaraan() {
         System.out.println("\n=========================================================================================");
