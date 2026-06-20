@@ -1,0 +1,18 @@
+[
+  {
+    "infoTambahan": "A/T",
+    "platNomor": "L 300 WO",
+    "merk": "Lexus LM500",
+    "hargaSewaPerHari": 1000000.0,
+    "status": "SEDANG_DISEWA",
+    "type": "Mobil"
+  },
+  {
+    "infoTambahan": "A/T",
+    "platNomor": "B 354",
+    "merk": "Mercedes-Maybach S-Class",
+    "hargaSewaPerHari": 5000000.0,
+    "status": "TERSEDIA",
+    "type": "Mobil"
+  }
+]
