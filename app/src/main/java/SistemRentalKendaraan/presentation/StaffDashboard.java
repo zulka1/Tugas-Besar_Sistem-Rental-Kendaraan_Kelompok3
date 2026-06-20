@@ -1,19 +1,15 @@
 package SistemRentalKendaraan.presentation;
 
 import SistemRentalKendaraan.application.PelangganService;
-import SistemRentalKendaraan.application.SopirService;
 import SistemRentalKendaraan.application.TransaksiService;
 import SistemRentalKendaraan.domain.model.Kendaraan;
 import SistemRentalKendaraan.domain.model.Pelanggan;
-import SistemRentalKendaraan.domain.model.Sopir;
 import SistemRentalKendaraan.domain.model.Transaksi;
 import SistemRentalKendaraan.domain.repository.KendaraanRepository;
 import SistemRentalKendaraan.domain.repository.PelangganRepository;
-import SistemRentalKendaraan.domain.repository.SopirRepository;
 import SistemRentalKendaraan.domain.repository.TransaksiRepository;
 import SistemRentalKendaraan.infrastructure.JsonKendaraanRepository;
 import SistemRentalKendaraan.infrastructure.JsonPelangganRepository;
-import SistemRentalKendaraan.infrastructure.JsonSopirRepository;
 import SistemRentalKendaraan.infrastructure.JsonTransaksiRepository;
 
 import java.text.NumberFormat;
@@ -23,7 +19,6 @@ import java.util.Locale;
 public class StaffDashboard {
     private final PelangganService pelangganService;
     private final TransaksiService transaksiService;
-    private final SopirService sopirService;
 
     public StaffDashboard() {
         PelangganRepository pelangganRepository =
@@ -35,20 +30,14 @@ public class StaffDashboard {
         TransaksiRepository transaksiRepository =
             new JsonTransaksiRepository();
 
-        SopirRepository sopirRepository =
-            new JsonSopirRepository();
-
         this.pelangganService =
             new PelangganService(pelangganRepository);
 
         this.transaksiService = new TransaksiService(
             transaksiRepository,
             kendaraanRepository,
-            pelangganRepository,
-            sopirRepository
+            pelangganRepository
         );
-
-        this.sopirService = new SopirService(sopirRepository);
     }
 
     public void showMenu() {
@@ -258,31 +247,6 @@ public class StaffDashboard {
             return;
         }
 
-        String opsiSopir = ConsoleHelper.getInput(
-            "Apakah ingin menggunakan layanan Sopir? (y/n): "
-        );
-
-        String idSopir = null;
-        if (opsiSopir.equalsIgnoreCase("y")) {
-            List<Sopir> sopirTersedia = sopirService.lihatSopirTersedia();
-            if (sopirTersedia.isEmpty()) {
-                System.out.println("Maaf, tidak ada sopir yang tersedia saat ini.");
-                System.out.println("Peminjaman akan dilanjutkan tanpa sopir (lepas kunci).");
-                ConsoleHelper.getInput("Tekan ENTER untuk melanjutkan...");
-            } else {
-                System.out.println("\n--- DAFTAR SOPIR TERSEDIA ---");
-                System.out.println("----------------------------------------------");
-                System.out.printf("| %-10s | %-20s | %-12s |\n", "ID Sopir", "Nama", "Biaya/Hari");
-                System.out.println("----------------------------------------------");
-                for (Sopir s : sopirTersedia) {
-                    System.out.printf("| %-10s | %-20s | %-12s |\n",
-                        s.getIdSopir(), s.getNama(), formatRupiah(s.getBiayaPerHari()));
-                }
-                System.out.println("----------------------------------------------");
-                idSopir = ConsoleHelper.getInput("Pilih ID Sopir: ");
-            }
-        }
-
         try {
             System.out.println(
                 "\nMemproses transaksi..."
@@ -292,8 +256,7 @@ public class StaffDashboard {
                 transaksiService.prosesPeminjaman(
                     nomorKtp,
                     platNomor,
-                    durasiSewa,
-                    idSopir
+                    durasiSewa
                 );
 
             tampilkanStrukPeminjaman(transaksi);

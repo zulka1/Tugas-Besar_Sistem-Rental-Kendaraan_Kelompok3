@@ -1,16 +1,12 @@
 package SistemRentalKendaraan.presentation;
 
 import SistemRentalKendaraan.application.KendaraanService;
-import SistemRentalKendaraan.application.SopirService;
 import SistemRentalKendaraan.domain.model.Kendaraan;
 import SistemRentalKendaraan.domain.model.Mobil;
 import SistemRentalKendaraan.domain.model.Motor;
-import SistemRentalKendaraan.domain.model.Sopir;
 import SistemRentalKendaraan.domain.model.enums.StatusKendaraan;
 import SistemRentalKendaraan.domain.repository.KendaraanRepository;
-import SistemRentalKendaraan.domain.repository.SopirRepository;
 import SistemRentalKendaraan.infrastructure.JsonKendaraanRepository;
-import SistemRentalKendaraan.infrastructure.JsonSopirRepository;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -18,14 +14,11 @@ import java.util.Locale;
 
 public class AdminDashboard {
     private final KendaraanService kendaraanService;
-    private final SopirService sopirService;
 
     public AdminDashboard() {
         // Instansiasi internal agar LoginView dan Main tidak perlu diubah
         KendaraanRepository kendaraanRepository = new JsonKendaraanRepository();
         this.kendaraanService = new KendaraanService(kendaraanRepository);
-        SopirRepository sopirRepository = new JsonSopirRepository();
-        this.sopirService = new SopirService(sopirRepository);
     }
 
     public void showMenu() {
@@ -38,8 +31,6 @@ public class AdminDashboard {
             System.out.println("1. Tambah Kendaraan Baru");
             System.out.println("2. Lihat Semua Kendaraan");
             System.out.println("3. Hapus Kendaraan");
-            System.out.println("4. Tambah Sopir Baru");
-            System.out.println("5. Lihat Semua Sopir");
             System.out.println("0. Logout");
             System.out.println("----------------------------------------");
             
@@ -50,10 +41,6 @@ public class AdminDashboard {
                 menuLihatKendaraan();
             } else if (pilihan.equals("3")) {
                 menuHapusKendaraan();
-            } else if (pilihan.equals("4")) {
-                menuTambahSopir();
-            } else if (pilihan.equals("5")) {
-                menuLihatSopir();
             } else if (pilihan.equals("0")) {
                 System.out.println("[SUKSES] Berhasil logout dari Admin.");
                 break;
@@ -152,56 +139,5 @@ public class AdminDashboard {
     private String formatRupiah(double amount) {
         NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("in", "ID"));
         return nf.format(amount).replace(",00", "").replace("Rp", "Rp ");
-    }
-
-    private void menuTambahSopir() {
-        ConsoleHelper.printHeader("MENU TAMBAH SOPIR BARU");
-        String nama = ConsoleHelper.getInput("Masukkan Nama Sopir     : ");
-        if (nama.isEmpty()) {
-            System.out.println("Nama sopir tidak boleh kosong!");
-            return;
-        }
-        String noTelp = ConsoleHelper.getInput("Masukkan No Telepon      : ");
-        if (noTelp.isEmpty()) {
-            System.out.println("Nomor telepon tidak boleh kosong!");
-            return;
-        }
-
-        try {
-            Sopir sopir = new Sopir();
-            sopir.setNama(nama);
-            sopir.setNoTelepon(noTelp);
-            sopir.setBiayaPerHari(150000.0); // Biaya default sesuai peta file
-            
-            sopirService.tambahSopir(sopir);
-            System.out.println("\n[SUKSES] Sopir " + nama + " berhasil ditambahkan.");
-        } catch (Exception e) {
-            System.out.println("\n[GAGAL] " + e.getMessage());
-        }
-        ConsoleHelper.getInput("\nTekan ENTER untuk kembali ke menu utama...");
-    }
-
-    private void menuLihatSopir() {
-        ConsoleHelper.printHeader("DAFTAR SELURUH SOPIR");
-        List<Sopir> daftar = sopirService.lihatSemuaSopir();
-        if (daftar.isEmpty()) {
-            System.out.println("Data sopir masih kosong.");
-        } else {
-            System.out.println("----------------------------------------------------------------------");
-            System.out.printf("| %-10s | %-20s | %-15s | %-12s | %-10s |\n", 
-                "ID Sopir", "Nama", "No Telepon", "Biaya/Hari", "Status");
-            System.out.println("----------------------------------------------------------------------");
-            for (Sopir s : daftar) {
-                System.out.printf("| %-10s | %-20s | %-15s | %-12s | %-10s |\n",
-                    s.getIdSopir(),
-                    s.getNama(),
-                    s.getNoTelepon(),
-                    formatRupiah(s.getBiayaPerHari()),
-                    s.getStatus()
-                );
-            }
-            System.out.println("----------------------------------------------------------------------");
-        }
-        ConsoleHelper.getInput("\nTekan ENTER untuk kembali ke menu utama...");
     }
 }
