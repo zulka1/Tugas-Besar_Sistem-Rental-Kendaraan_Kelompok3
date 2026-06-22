@@ -150,7 +150,7 @@ public class AdminDashboard {
     }
 
     private String formatRupiah(double amount) {
-        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("in", "ID"));
+        NumberFormat nf = NumberFormat.getCurrencyInstance(Locale.forLanguageTag("id-ID"));
         return nf.format(amount).replace(",00", "").replace("Rp", "Rp ");
     }
 
